@@ -1,0 +1,50 @@
+* {
+    color: white;
+    text-align: center;
+}
+h1 {
+    font-family: Montserrat;
+    font-weight: 900;
+}
+h2 {
+    font-family: Epilogue;
+}
+h3 {
+    font-family: Gamja Flower;
+}
+form {
+    padding: 20px;
+    background-color: rgb(75, 75, 12);
+    margin-left: 15%;
+    margin-right: 15%;
+    width: 70%;
+    border-radius: 20px;
+    input {
+        padding: 10px;
+        border-radius: 20px;
+        font-size: 20px;
+        font-family: Epilogue, Gamja Flower, Montserrat;
+        color: black;
+        border: none;
+    }
+    div {
+        margin-top: 15px;
+        margin-bottom: 15px;
+    }
+}
+button {
+    padding: 10px;
+    font-family: Epilogue;
+    font-size: 20px;
+    border-radius: 20px;
+    border: none;
+    transition: all 0.4s ease-in-out;
+    background-color: rgb(28, 155, 28);
+    color: white;
+}
+    button:hover {
+    font-size: 23px;
+    color: black;
+    background-color: white;
+    cursor: pointer;
+}
