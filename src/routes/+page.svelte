@@ -60,5 +60,5 @@
         <br>
         <h4>This project uses V1 of the Hackatime API</h4>
     </div>
-{/if}
+{/if} 
 <!--https://hackatime.hackclub.com/api/v1/users/U08EMT46G3V/stats?filter_by_project=<project name>-->
