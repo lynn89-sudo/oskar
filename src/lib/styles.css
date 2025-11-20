@@ -6,11 +6,11 @@ h1 {
     font-family: Montserrat;
     font-weight: 900;
 }
-h2 {
-    font-family: Epilogue;
+h2, h3 {
+    font-family: Epilogue, Space Grotesk;
 }
-h3 {
-    font-family: Gamja Flower;
+h4 {
+    font-family: Space Grotesk, Epilogue;
 }
 form {
     padding: 20px;

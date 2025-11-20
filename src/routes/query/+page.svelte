@@ -10,8 +10,10 @@
     }, 100)
 
     let username = $state("");
+    let fraud = $state(false);
     let filter = $state("");
     let totalTime = $state("");
+    let langs = $state([]);
 
     onMount(() => {
         let id = sessionStorage.getItem("id");
@@ -23,6 +25,16 @@
         .then((data) => {
             username = data.data.username;
             totalTime = data.data.human_readable_total;
+            for (let i = 0; i < data.data.languages.length; i++) {
+                langs.push([
+                    data.data.languages[i].name.toUpperCase(),
+                    data.data.languages[i].text
+                ])
+            }
+            if (data.trust_factor.trust_value < 0) {
+                fraud = true;
+            }
+            console.log(langs);
         })
     })
 </script>
@@ -51,6 +63,33 @@
             margin-left: 10px;
         }
     }
+
+    #details {
+        margin-left: 0;
+        margin-right: 0;
+        padding: 20px;
+        border-top-left-radius: 30px;
+        border-top-right-radius: 30px;
+        background-color: rgb(61, 61, 13);
+    }
+
+    .codeLang {
+        background-color: rgb(63, 75, 13);
+        margin-left: 30%;
+        margin-right: 30%;
+        margin-bottom: 20px;
+        padding: 20px;
+        border-radius: 20px;
+        border: 5px ridge rgb(137, 197, 135);
+        font-size: 20px;
+
+        span {
+            background-color: rgb(109, 114, 88);
+            padding: 5px;
+            border-radius: 10px;
+            font-family: Space Grotesk, Epilogue;
+        }
+    }
 </style>
 <div id="cover"></div>
 <br>
@@ -59,6 +98,16 @@
     <h1 transition:scale id="title">OSKAR</h1>
     <h2 id="username" transition:slide>{username} <span>{filter}</span></h2>
     <br>
-    <h2 style="font-family: Montserrat; font-weight: 700">{totalTime}</h2>
+    {#if fraud}<h3><span style="background-color: brown; padding: 10px; border-radius: 10px">User has committed Hackatime fraud</span></h3>{/if}
+    <br>
+    <div id="details" transition:scale={{delay:2000}}>
+        <h2 style="font-family: Montserrat; font-weight: 900; font-size:40px">{totalTime}</h2>
+        <br>
+        {#each langs as codeLang}
+            <div class="codeLang"> 
+                <h3 style= "font-family: Montserrat; font-weight: 900;">{codeLang[0]} <span>{codeLang[1]}</span></h3>
+            </div>
+        {/each}
+    </div>
 {/if}
 <!--https://hackatime.hackclub.com/api/v1/users/<slackID>/stats?filter_by_project=<project name>-->
