@@ -1,38 +1,8 @@
-# sv
+# Oskar
+## Hackatime Viewer
 
-Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
+This is Oskar, a static SvelteKit website to view Hackatime stats from the Hackatime V1 API. This can be useful to YSWS organizers and more.
 
-## Creating a project
+To use, go to lynn89-sudo.github.io/oskar, enter the Slack ID of your intended user (filter by project is optional, but recommended for YSWSs), and view the stats!
 
-If you're seeing this, you've probably already done this step. Congrats!
-
-```sh
-# create a new project in the current directory
-npx sv create
-
-# create a new project in my-app
-npx sv create my-app
-```
-
-## Developing
-
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
-
-```sh
-npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
-
-## Building
-
-To create a production version of your app:
-
-```sh
-npm run build
-```
-
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
+<img width="1231" height="672" alt="Capture d’écran 2025-11-19 à 9 26 48 PM" src="https://github.com/user-attachments/assets/31c7c3f9-f09c-48e5-8fc5-838c4a95127d" />
